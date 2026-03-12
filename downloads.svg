@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="20">
+  <!-- 左侧背景 - "downloads" 文字 -->
+  <linearGradient id="smooth" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <mask id="round">
+    <rect width="120" height="20" rx="3" fill="#fff"/>
+  </mask>
+  <g mask="url(#round)">
+    <!-- 左侧 - downloads -->
+    <rect width="70" height="20" fill="#555"/>
+    <rect width="70" height="20" fill="url(#smooth)"/>
+    <!-- 右侧 - 下载数量 -->
+    <rect x="70" width="50" height="20" fill="#4c1"/>
+    <rect x="70" width="50" height="20" fill="url(#smooth)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11">
+    <!-- downloads 文字 -->
+    <text x="35" y="14">downloads</text>
+    <!-- 下载数量 -->
+    <text x="95" y="14">1.2k</text>
+  </g>
+</svg>
