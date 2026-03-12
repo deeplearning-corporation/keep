@@ -1,9 +1,10 @@
 <img width="190" height="185" alt="KEEP Logo" src="https://github.com/user-attachments/assets/c99b2fa5-54b4-405d-9389-d9ba1f8ab919" /> 
 <h1>KEEP 编译器</h3>
 <h3>C\C++ 编译器</h3>
-[![License](LICENSE)
-[![Downloads](https://github.com/deeplearning-corporation/keep/release)
-[![BiliBili](https://www.bi(https://space.bilibili.com/3493294325631048?spm_id_from=333.40164.0.0)
+
+[![License](https://img.shields.io/badge/License-KEEP-blue.svg)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/deeplearning-corporation/keep/total.svg)](https://github.com/deeplearning-corporation/keep/releases)
+[![BiliBili](https://img.shields.io/badge/BiliBili-KEEP-ff69b4.svg)](https://space.bilibili.com/3493294325631048)
 
 </div>
 
