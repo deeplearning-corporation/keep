@@ -3,7 +3,7 @@
 <h3>C\C++ 编译器</h3>
 
 [![License](https://img.shields.io/badge/License-KEEP-blue.svg)](LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/deeplearning-corporation/keep/total.svg)](https://github.com/deeplearning-corporation/keep/releases)
+[![Downloads](https://img.shields.io/github/downloads/deeplearning-corporation/keep/downloads.svg)](https://github.com/deeplearning-corporation/keep/releases)
 [![BiliBili](https://img.shields.io/badge/BiliBili-KEEP-ff69b4.svg)](https://space.bilibili.com/3493294325631048)
 
 </div>
