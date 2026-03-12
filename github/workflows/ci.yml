@@ -1,0 +1,43 @@
+name: KEEP CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        arch: [x86, x64]
+        config: [debug, release]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup KEEP Environment
+      run: |
+        echo "Setting up KEEP compiler environment..."
+        # 这里添加环境设置步骤
+    
+    - name: Build Tests
+      run: |
+        cd tests
+        ..\bin\keep.exe build all
+    
+    - name: Run Tests
+      run: |
+        cd tests
+        .\run_tests.bat
+    
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: keep-${{ matrix.arch }}-${{ matrix.config }}
+        path: |
+          bin/
+          lib/
+          config/

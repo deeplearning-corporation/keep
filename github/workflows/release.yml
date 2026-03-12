@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Release
+      run: |
+        mkdir dist
+        # 构建发布版本
+        .\build_release.bat
+        
+    - name: Create Release Package
+      run: |
+        cd dist
+        7z a keep-${{ github.ref_name }}-windows-x64.zip *
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: KEEP ${{ github.ref_name }}
+        draft: false
+        prerelease: false
+        
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/keep-${{ github.ref_name }}-windows-x64.zip
+        asset_name: keep-${{ github.ref_name }}-windows-x64.zip
+        asset_content_type: application/zip
